@@ -8,20 +8,27 @@
 
 // const userWord = prompt("inserisci una parola");
 // isPalindrone(asss);
+const buttonPalindromeEl = document.getElementById("button-palindrome");
+const wordInputEl = document.getElementById("word-input");
+const choiceWordEl = document.getElementById("choice-word");
+const okItsPalindrome = document.getElementById("ok-palindrome");
+// const userWord = prompt("inserire una parola");
+// let userNumber = 0;
+// console.log(thisNumberIsPalindrome);
+// console.log(userWord);
 
-// function isPalindrone(word) {
-//   let currentLetter = userWord[i];
-//   let wordLength = word.length;
-//   for (let i = 0; i < wordLength / 2; i++) {
-//     if (currentLetter !== word[wordLength - 1 - i]) {
-//       return false;
-//   }
-// }
-const userWord = prompt("inserire una parola");
+buttonPalindromeEl.addEventListener("click", function () {
+  let userNumber = wordInputEl.value;
+  let thisNumberIsPalindrome = isPalindrome(userNumber);
 
-let thisNumberIsPalindrome = isPalindrome(userWord);
-console.log(thisNumberIsPalindrome);
-console.log(userWord);
+  if (thisNumberIsPalindrome) {
+    choiceWordEl.innerHTML = ` E' PALINDROMA `;
+  } else {
+    choiceWordEl.innerHTML = `NON E' PALINDROMA `;
+  }
+  // console.log(userNumber);
+  // console.log(thisNumberIsPalindrome);
+});
 
 function isPalindrome(string) {
   let left = 0;
