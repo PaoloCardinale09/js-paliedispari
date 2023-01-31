@@ -17,16 +17,24 @@
 // DOM'S ELEMENTS
 const buttonOddEl = document.getElementById("button-odd");
 const buttonEvenEl = document.getElementById("button-even");
+const userNumberEl = document.getElementById("user-number");
+const cpuNumberEl = document.getElementById("cpu-number");
+const resultEl = document.getElementById("result");
 
 // SE UTENTE CLICCA SU PARI
 buttonOddEl.addEventListener("click", function () {
   const userNumber = parseInt(prompt("scegli numero da 1 a 5"));
   const sumGame = parseInt(userNumber) + numberCpu;
 
+  userNumberEl.append(userNumber);
+  cpuNumberEl.append(numberCpu);
+
   if (sumGame % 2 == 0) {
-    alert("HAI VINTO!");
+    // alert("HAI VINTO!");
+    resultEl.innerHTML = "HAI VINTO!!!";
   } else {
-    alert("HAI PERSO!");
+    // alert("HAI PERSO!");
+    resultEl.innerHTML = "HAI PERSO!!!";
   }
   console.log(sumGame);
 });
